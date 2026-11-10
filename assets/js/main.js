@@ -27,6 +27,7 @@
   var biz = C.business || {};
   var contact = C.contact || {};
   var hours = C.hours || [];
+  var mapAddress = [biz.street, (biz.zip || "") + " " + (biz.city || "")].filter(Boolean).join(", "); // "Höninger Weg 208, 50969 Köln"
   var fullAddress = [biz.street, (biz.zip || "") + " " + (biz.city || ""), biz.countryName].filter(Boolean).join(", ");
 
   if (DRAFT) {
@@ -278,7 +279,7 @@
       if (!items) social.parentElement.hidden = true;
     }
 
-    var routeUrl = "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(biz.name + ", " + fullAddress);
+    var routeUrl = "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(mapAddress);
     $$("[data-route-link]").forEach(function (a) { a.href = routeUrl; });
   }
 
@@ -339,7 +340,7 @@
         visit.innerHTML =
           '<div><span class="booking-visit__label">Studio</span><p>' + esc(biz.street) + "<br>" + esc(biz.zip + " " + biz.city) + "</p></div>" +
           '<div><span class="booking-visit__label">Öffnungszeiten</span><p>' + compactHours("<br>") + "</p></div>" +
-          '<a class="btn btn--dark" href="' + esc("https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(biz.name + ", " + fullAddress)) + '" target="_blank" rel="noopener">Route planen</a>';
+          '<a class="btn btn--dark" href="' + esc("https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(mapAddress)) + '" target="_blank" rel="noopener">Route planen</a>';
         visit.hidden = false;
       }
     }
@@ -384,7 +385,7 @@
     if (!map) return;
     (function () {
       var f = doc.createElement("iframe");
-      f.src = "https://www.google.com/maps?q=" + encodeURIComponent(biz.name + ", " + fullAddress) + "&output=embed";
+      f.src = "https://www.google.com/maps?q=" + encodeURIComponent(mapAddress) + "&z=17&hl=de&output=embed";
       f.title = "Karte: " + biz.name + ", " + fullAddress;
       f.loading = "lazy";
       f.referrerPolicy = "no-referrer-when-downgrade";

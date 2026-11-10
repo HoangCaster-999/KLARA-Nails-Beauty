@@ -14,7 +14,7 @@
    ===================================================================== */
 
 window.KLARA = {
-  draft: true,
+  draft: false,
 
   business: {
     name: "KLARA Nails & Beauty",

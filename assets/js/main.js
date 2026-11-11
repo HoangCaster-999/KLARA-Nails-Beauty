@@ -418,7 +418,7 @@
       openingHoursSpecification: Object.keys(groups).map(function (k) { return groups[k]; }),
       makesOffer: (C.services || []).map(function (s) { return { "@type": "Offer", itemOffered: { "@type": "Service", name: s.title } }; })
     };
-    if (isSet(biz.siteUrl)) { data.url = biz.siteUrl; data.logo = biz.siteUrl.replace(/\/?$/, "/") + "assets/img/klara-logo.svg"; }
+    if (isSet(biz.siteUrl)) { data.url = biz.siteUrl; data.logo = biz.siteUrl.replace(/\/?$/, "/") + "assets/img/klara-logo.png"; }
     if (isSet(contact.phone)) data.telephone = contact.phone;
     if (isSet(contact.email)) data.email = contact.email;
     var same = [contact.instagram, contact.facebook].filter(isSet);

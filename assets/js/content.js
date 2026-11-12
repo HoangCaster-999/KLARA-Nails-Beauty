@@ -39,7 +39,7 @@ window.KLARA = {
     facebook: "[FACEBOOK-URL]",
     // Link zu einem Online-Buchungssystem (optional). Achtung: der QR-Code auf
     // der Original-Preisliste wurde NICHT geprüft und ist hier nicht eingetragen.
-    bookingUrl: "[BUCHUNGS-URL]"
+    bookingUrl: "https://klaranailsbeauty.setmore.com"
   },
 
   /* Öffnungszeiten. dow: 0 = Sonntag … 6 = Samstag.

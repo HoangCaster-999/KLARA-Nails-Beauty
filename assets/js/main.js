@@ -332,7 +332,9 @@
       var section = form.closest(".booking");
       if (section) section.classList.add("booking--visit");
       var lead = $("[data-booking-lead]");
-      if (lead) lead.textContent = hasPhone
+      if (lead) lead.textContent = hasUrl
+        ? "Buchen Sie Ihren Wunschtermin bequem online – oder kommen Sie einfach im Studio vorbei."
+        : hasPhone
         ? "Rufen Sie uns an oder kommen Sie einfach vorbei – wir finden gemeinsam einen passenden Termin."
         : "Kommen Sie einfach im Studio vorbei – wir finden gemeinsam einen passenden Termin.";
       var visit = $("[data-booking-visit]");
@@ -340,7 +342,9 @@
         visit.innerHTML =
           '<div><span class="booking-visit__label">Studio</span><p>' + esc(biz.street) + "<br>" + esc(biz.zip + " " + biz.city) + "</p></div>" +
           '<div><span class="booking-visit__label">Öffnungszeiten</span><p>' + compactHours("<br>") + "</p></div>" +
-          '<a class="btn btn--dark" href="' + esc("https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(mapAddress)) + '" target="_blank" rel="noopener">Route planen</a>';
+          '<div class="booking-visit__actions">' +
+          (hasUrl ? '<a class="btn btn--dark" href="' + esc(contact.bookingUrl) + '" target="_blank" rel="noopener">Online buchen</a>' : "") +
+          '<a class="btn ' + (hasUrl ? "btn--outline" : "btn--dark") + '" href="' + esc("https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(mapAddress)) + '" target="_blank" rel="noopener">Route planen</a></div>';
         visit.hidden = false;
       }
     }

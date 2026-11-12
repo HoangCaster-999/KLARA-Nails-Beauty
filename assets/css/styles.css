@@ -538,7 +538,7 @@ em { font-style: italic; }
 }
 .booking-visit p { margin: 0; font-size: 1.05rem; color: var(--ink); line-height: 1.6; }
 .booking-visit__label { display: block; font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rosewood); margin-bottom: .4rem; }
-.booking-visit .btn { grid-column: 1 / -1; justify-self: start; }
+.booking-visit__actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: .75rem; }
 @media (max-width: 860px) { .booking__grid { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .booking-visit { grid-template-columns: 1fr; } }
 @media (max-width: 420px) { .field-row { grid-template-columns: 1fr; gap: 0; } }

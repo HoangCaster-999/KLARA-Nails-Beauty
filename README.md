@@ -17,8 +17,8 @@ site/
     ├── js/content.js     ★ NỘI DUNG: liên hệ, giờ mở cửa, dịch vụ, BẢNG GIÁ, gallery, ảnh hero
     ├── js/main.js        Logic (render nội dung, form đặt lịch, hiệu ứng) – thường không cần sửa
     ├── css/styles.css    Giao diện; bảng màu/font nằm ở đầu file (:root)
-    ├── img/              klara-logo.png, klara-logo-light.png (bản màu sáng cho nền tối),
-    │                     klara-preisliste.svg, favicon.svg
+    ├── img/              klara-logo.png (bản gốc, dùng cho schema), klara-logo.webp + klara-logo-400.webp (dùng trên site),
+    │                     klara-preisliste.svg, favicon-32/180/512.png
     │   └── galerie/      Ảnh móng thật dạng WebP, mỗi ảnh 2 cỡ: tên-720.webp và tên-1440.webp
     └── fonts/            Font tự host (Fraunces, Manrope) – không gọi Google Fonts (DSGVO)
 ```

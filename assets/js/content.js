@@ -55,7 +55,7 @@ window.KLARA = {
     { dow: 0, day: "Sonntag",    open: null,    close: null, placeholder: "[SONNTAG – BITTE ANGEBEN]" }
   ],
 
-  /* Preise – übernommen aus KLARA-Preisliste.svg (abgeglichen mit dem Originalbild).
+  /* Preise – nach der neuen Preisliste (Stand 11/2026).
      Werte OHNE Währung eintragen; das Währungszeichen wird automatisch ergänzt,
      solange showCurrency true ist. */
   showCurrency: true,      // "€" hinter jedem Preis – bitte vom Studio bestätigen
@@ -64,19 +64,14 @@ window.KLARA = {
   prices: [
     {
       id: "uv-gel-acryl",
-      title: "UV-Gel / Acryl",
-      // Originalbild zeigt "Autf | Neu". "Auffüllen" ist eine Lesart – bitte bestätigen.
-      columns: [
-        { label: "Auffüllen", unconfirmed: "Original: „Autf“" },
-        { label: "Neu" }
-      ],
+      title: "UV-Gel Acryl",
+      columns: [{ label: "Auffüllen" }, { label: "Neu" }],
       items: [
         { name: "Natur",            prices: ["30", "35"] },
-        // Originalbild: "Faber - Babyboom" – Schreibweise bitte bestätigen
-        { name: "Babyboomer",       prices: ["35", "40"], unconfirmed: "Original: „Faber - Babyboom“" },
+        { name: "Faber - Babyboom", prices: ["35", "40"] },
         { name: "French",           prices: ["40", "45"] },
-        { name: "Chrome / Cat Eyes", prices: [null, "+10"], surcharge: true },
-        { name: "Mit Gel",          prices: [null, "+5"],  surcharge: true }
+        { name: "Chrome - Cat Eyes", prices: [null, "+10"], surcharge: true },
+        { name: "mit Gel",          prices: [null, "+5"],  surcharge: true }
       ]
     },
     {
@@ -86,7 +81,7 @@ window.KLARA = {
       items: [
         { name: "Maniküre",             prices: ["15"] },
         { name: "Maniküre mit Shellac", prices: ["35"] },
-        { name: "Nur Shellac",          prices: ["25"] }
+        { name: "nur Shellac",          prices: ["25"] }
       ]
     },
     {
@@ -96,14 +91,14 @@ window.KLARA = {
       items: [
         { name: "Pediküre",             prices: ["30"] },
         { name: "Pediküre mit Shellac", prices: ["45"] },
-        { name: "Nur Shellac",          prices: ["35"] },
-        { name: "Mit Acryl",            prices: ["55"] },
-        { name: "Nur Acryl",            prices: ["45"] }
+        { name: "nur Shellac",          prices: ["35"] },
+        { name: "mit Acryl",            prices: ["55"] },
+        { name: "nur Acryl",            prices: ["45"] }
       ]
     },
     {
       id: "extras",
-      title: "Extras",
+      title: "Extra",
       columns: [],
       items: [
         { name: "Reparatur",        prices: ["ab 5"] },
@@ -117,9 +112,9 @@ window.KLARA = {
       title: "Wimpern",
       columns: [{ label: "Neu" }, { label: "2 Wochen" }, { label: "3 Wochen" }],
       items: [
-        { name: "Classic",      prices: ["50", "40", "45"] },
-        { name: "Volumen",      prices: ["60", "50", "55"] },
-        { name: "Mega Volumen", prices: ["75", "60", "65"] }
+        { name: "Classic",      prices: ["50", "40", "35"] },
+        { name: "Volumen",      prices: ["65", "55", "50"] },
+        { name: "Mega Volumen", prices: ["ab 80", null, null] }
       ]
     }
   ],
@@ -140,14 +135,14 @@ window.KLARA = {
     },
     {
       title: "UV-Gel & Acryl",
-      text: "Natur, Babyboomer oder French – auf Wunsch veredelt mit Chrome- oder Cat-Eye-Effekt, Strasssteinen und Nail-Design.",
+      text: "Natur, Babyboom oder French – auf Wunsch veredelt mit Chrome- oder Cat-Eye-Effekt, Strasssteinen und Nail-Design.",
       from: "30",
       priceRef: "uv-gel-acryl"
     },
     {
       title: "Wimpern",
       text: "Wimpernverlängerung in Classic, Volumen oder Mega Volumen – vom natürlichen bis zum ausdrucksstarken Look.",
-      from: "40",
+      from: "35",
       priceRef: "wimpern"
     }
   ],
